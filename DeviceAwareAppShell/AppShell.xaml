@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DeviceAwareAppShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DeviceAwareAppShell"
+    Shell.FlyoutBehavior="{OnIdiom Default=Flyout,
+                                   Phone=Disabled}">
+    <FlyoutItem FlyoutItemIsVisible="{OnIdiom Default=False, Phone=True}" IsVisible="{OnIdiom Default=False, Phone=True}">
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate local:Tab1}" />
+        </Tab>
+        <Tab Title="Setting">
+            <ShellContent ContentTemplate="{DataTemplate local:Tab2}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Home" FlyoutItemIsVisible="{OnIdiom Default=True, Phone=False}">
+        <ShellContent ContentTemplate="{DataTemplate local:Tab1}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Setting" FlyoutItemIsVisible="{OnIdiom Default=True, Phone=False}">
+        <ShellContent ContentTemplate="{DataTemplate local:Tab2}" />
+    </FlyoutItem>
+
+</Shell>
